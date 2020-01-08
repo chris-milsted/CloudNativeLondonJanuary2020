@@ -1,0 +1,13 @@
+FROM scratch
+
+# List the maintainer
+LABEL maintainer="Chris Milsted"
+
+# Copy the Pre-built binary file from the previous stage. Observe we also copied the .env file
+COPY  ./helloworld .
+
+# Expose port 8080 to the outside world
+EXPOSE 8080
+
+#Command to run the executable
+CMD ["./helloworld"]
